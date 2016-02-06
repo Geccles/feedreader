@@ -15,7 +15,7 @@ Please note: I added a small new feature (author's name) to the application that
 
 ## Additional Tests
 
-I have added two additional tests to this application (which is not required).
+I have added two additional tests in a test suite titled "Page Content" to this application (which is not required).
 
 I noticed that in the index.html that the link is created by handlebars-template.
 
@@ -28,7 +28,7 @@ I noticed that in the index.html that the link is created by handlebars-template
             <p>{{contentSnippet}}</p>
         </article>
     </a>
-  </script>
+</script>
 ```
 
 This led me to check how the links are actually populated on the page. So I checked out the app.js file to find that the application is using the API at https://rsstojson.udacity.com/parseFeed. I then looked at the JSON results from the AJAX call to that API and noticed that inside the JSON was the `link` which is what the handlebars-template is returning. I figured this would be a good feature to test. When the test is run it passes.
