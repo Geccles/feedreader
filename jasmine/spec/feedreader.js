@@ -124,4 +124,21 @@ $(function() {
       });
     });
   });
+
+  /* Test suite that test the "Page Content" */
+  describe('Page Content', function() {
+    beforeEach(function(done) {
+      loadFeed(0, done);
+    });
+
+    //let's make sure we get back the link for each article
+    it('should return a link to the article', function() {
+      expect($('a.entry-link').attr('href').length).not.toBe(0);
+    });
+
+    //let's return one of those awesome authors on the page now!
+    it('should put author name as <h3> below each article title', function() {
+      expect($('article').find('h3').first().text()).not.toBe('');
+    });
+  });
 }());
